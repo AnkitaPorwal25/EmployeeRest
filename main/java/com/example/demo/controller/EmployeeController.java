@@ -30,8 +30,8 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
-        Employee savedEmployee = employeeService.saveEmployee(employee);
+    public ResponseEntity<List<Employee>> createEmployee(@RequestBody List<Employee> employee) {
+        List<Employee> savedEmployee = employeeService.saveEmployee(employee);
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
 
